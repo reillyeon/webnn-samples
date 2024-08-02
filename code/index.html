@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>WebNN Code Editor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./libs/codemirror/codemirror.css">
+    <link rel="stylesheet" href="./libs/codemirror/railscasts.css">
+    <link href='../common/css/style.css' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="../common/img/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../common/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../common/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../common/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../common/img/favicon/site.webmanifest">
+    <style>
+      .CodeMirror {
+        height: 65vh;
+        font-size: 16px;
+      }
+      #console-log {
+        word-break: break-all;
+        height: 10vh;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark">
+      <a href="../">
+        <div class="logosvg" id="logosvg"></div>
+      </a>
+      <span class="navbar-brand">WebNN Code Editor</span>
+      <ul class="navbar-nav"></ul>
+    </nav>
+    <div class="container" id="container">
+      <div class="row" style="padding-top:2%;">
+        <div class="col-md-12">
+          <div id="code-editor"></div>
+        </div>
+      </div>
+      <div class="row" style="padding-top:5px;">
+        <div class="col-md-4" align="left">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="example-select">Examples</label>
+            </div>
+            <select class="custom-select" id="example-select">
+            </select>
+          </div>
+        </div>
+        <div class="col-md-8" align="right">
+          <button type="button" class="btn btn-info btn-lg mr-2" id="edit">Edit</button>
+          <button type="button" class="btn btn-info btn-lg" id="run">Run</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="font-weight-bold">Console log:</div>
+          <div id="console-log" class="text-wrap CodeMirror cm-s-railscasts" style="overflow: auto"></div>
+        </div>
+      </div>
+    </div>
+    <footer class="text-muted text-center text-small mt-5">
+      <div id="badge"></div>
+      <div id="footer"></div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="./libs/codeSnippets.js"></script>
+    <script src="./libs/codemirror/codemirror.js"></script>
+    <script src="./libs/codemirror/javascript.js"></script>
+    <script src="./libs/codemirror/sublime.js"></script>
+    <script src="https://webmachinelearning.github.io/webnn-polyfill/dist/webnn-polyfill.js" crossorigin="anonymous"></script>
+    <script type="module">
+      import {main} from './main.js';
+      window.onload = async () => {
+        await main();
+      }
+    </script>
+    <script type="module" src="../common/component/component.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TK7JD3KKY"></script>
+    <script src="../common/libs/gtag.js"></script>
+  </body>
+</html>
